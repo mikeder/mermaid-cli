@@ -1,4 +1,4 @@
-FROM node:current-slim
+FROM node:alpine
 
 ARG VERSION
 
@@ -6,8 +6,6 @@ ADD install-dependencies.sh /install-dependencies.sh
 
 RUN chmod 755 /install-dependencies.sh && /install-dependencies.sh
 
-RUN useradd -ms /bin/bash mermaidcli
-USER mermaidcli
 WORKDIR /home/mermaidcli
 RUN yarn add @mermaid-js/mermaid-cli@$VERSION
 
