@@ -1,5 +1,8 @@
 FROM node:alpine
 
+ENV CHROME_BIN="/usr/bin/chromium-browser" \
+    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
+
 ARG VERSION
 
 ADD install-dependencies.sh /install-dependencies.sh
