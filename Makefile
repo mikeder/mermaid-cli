@@ -15,7 +15,7 @@ ci.release.image:
 build: ci.build.image ci.release.image
 .PHONY: build
 
-test:
+test: build
 	./run-tests.sh test-positive ${IMAGENAME}:${BUILD_VERSION}
 	./run-tests.sh test-positive ${IMAGENAME}:${RELEASE_VERSION}
 .PHONY: test
