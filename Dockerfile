@@ -5,9 +5,8 @@ ENV CHROME_BIN="/usr/bin/chromium-browser" \
 
 ARG VERSION
 
-ADD install-dependencies.sh /install-dependencies.sh
-
-RUN chmod 755 /install-dependencies.sh && /install-dependencies.sh
+ADD install-dependencies.sh install-dependencies.sh
+RUN chmod 755 install-dependencies.sh && /bin/sh install-dependencies.sh
 
 RUN adduser -D mermaidcli
 USER mermaidcli

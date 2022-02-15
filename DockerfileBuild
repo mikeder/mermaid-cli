@@ -22,8 +22,8 @@ WORKDIR /app
 COPY --from=build /app/*-mermaid-cli-*.tgz /install/
 COPY --from=build /app/puppeteer-config.json /puppeteer-config.json
 
-ADD install-dependencies.sh /install-dependencies.sh
-RUN chmod 755 /install-dependencies.sh && /install-dependencies.sh
+ADD install-dependencies.sh install-dependencies.sh
+RUN chmod 755 install-dependencies.sh && /bin/sh install-dependencies.sh
 
 RUN adduser -D mermaidcli
 USER mermaidcli
