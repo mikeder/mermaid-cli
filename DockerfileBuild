@@ -25,6 +25,8 @@ COPY --from=build /app/puppeteer-config.json /puppeteer-config.json
 ADD install-dependencies.sh /install-dependencies.sh
 RUN chmod 755 /install-dependencies.sh && /install-dependencies.sh
 
+RUN adduser -S mermaidcli
+USER mermaidcli
 WORKDIR /home/mermaidcli
 RUN yarn add $(ls -d /install/*.tgz)
 
