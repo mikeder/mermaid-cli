@@ -59,7 +59,7 @@ jobs:
         context: .
         file: ${{env.DOCKERFILE}}
         push: true
-        tags: "latest,${{env.IMAGETAG}},${{env.RELEASE_VERSION}}"
+        tags: "${{env.DOCKER_IO_REPOSITORY}}:latest,${{env.IMAGETAG}}"
 
     - name: Run e2e tests
       run: bash run-tests.sh ${{env.INPUT_DATA}} ${{env.IMAGETAG}}
