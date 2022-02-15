@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install chromium and required fonts
 # available fonts https://wiki.alpinelinux.org/wiki/Fonts
 apk add chromium font-noto-cjk font-noto-emoji \
