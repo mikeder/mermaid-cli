@@ -9,7 +9,7 @@ ADD install-dependencies.sh /install-dependencies.sh
 
 RUN chmod 755 /install-dependencies.sh && /install-dependencies.sh
 
-RUN adduser -S mermaidcli
+RUN adduser -D mermaidcli
 USER mermaidcli
 WORKDIR /home/mermaidcli
 RUN yarn add @mermaid-js/mermaid-cli@$VERSION
