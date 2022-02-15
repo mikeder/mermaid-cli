@@ -7,7 +7,7 @@ jobs:
     env:
       DOCKERFILE: DockerfileBuild
       IMAGENAME: mermaid-cli
-      DOCKER_IO_REPOSITORY: mikeder/mermaid-cli
+      DOCKER_IO_REPOSITORY: minlag/mermaid-cli
       INPUT_DATA: test-positive
       PERCY_TOKEN: ${{secrets.PERCY_TOKEN}}
     steps:
