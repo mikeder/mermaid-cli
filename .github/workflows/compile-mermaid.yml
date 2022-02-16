@@ -3,6 +3,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     env:
       DOCKERFILE: DockerfileBuild
@@ -49,6 +50,7 @@ jobs:
 
       - name: Run e2e tests
         run: bash run-tests.sh ${{env.INPUT_DATA}} ${{env.IMAGETAG}}
+        timeout-minutes: 5
 
       - name: Convert all svg files to png before uploading for automatic inspection
         run: |
